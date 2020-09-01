@@ -26,8 +26,8 @@ class LoginController extends ResourceController {
       msg = "用户不存在";
     } else {
       //通过auth/token获取token。登录成功的话，返回token
-      var clientId = "com.donggua.chat";
-      var clientSecret = "dongguasecret";
+      var clientId = "com.gxkai.chat";
+      var clientSecret = "com.gxkai.secret";
       var body =
           "username=${user.username}&password=${user.password}&grant_type=password";
       var clientCredentials =

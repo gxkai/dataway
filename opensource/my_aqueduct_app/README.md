@@ -1,6 +1,11 @@
 # my_aqueduct_app
 
 ## Running the Application Locally
+```
+pub run aqueduct generate
+pub run aqueduct upgrade
+pub run aqueduct auth add-client  --id com.gxkai.chat --secret com.gxkai.secre
+```
 
 Run `aqueduct serve` from this directory to run the application. For running within an IDE, run `bin/main.dart`. By default, a configuration file named `config.yaml` will be used.
 

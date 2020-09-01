@@ -79,7 +79,7 @@ class MyAqueductAppChannel extends ApplicationChannel {
 
     router.route("/files/*").link(() => FileController("public/"));
 
-    router.route("auth/token").link(() => AuthController(authServer));
+    router.route("/auth/token").link(() => AuthController(authServer));
 
     router
         .route("/register")
