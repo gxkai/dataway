@@ -81,22 +81,23 @@ class _LoginPageState extends State<LoginPage> {
     );
 
     print("登录结果:$response");
-    if (response != null &&
-        response.data != null &&
-        response.data['code'] == 1 &&
-        response.data['data']['access_token'] != null) {
-      //登录成功
-      String token = response.data['data']['access_token'];
-      int fromUserId = response.data['data']['userId'];
-      String userName = response.data['data']['userName'];
+    if (response.data['code'] == 1) {
+      if(response.data['data']['access_token'] != null) {
+        //登录成功
+        String token = response.data['data']['access_token'];
+        int fromUserId = response.data['data']['userId'];
+        String userName = response.data['data']['userName'];
 
-      Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-        return ChatListPage(
-          token: token,
-          fromUserId: fromUserId,
-          userName: userName,
-        );
-      }));
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+          return ChatListPage(
+            token: token,
+            fromUserId: fromUserId,
+            userName: userName,
+          );
+        }));
+      }
+    } else {
+      showToast(response.data['msg']);
     }
   }
 

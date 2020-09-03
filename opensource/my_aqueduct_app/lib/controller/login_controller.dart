@@ -60,7 +60,7 @@ class LoginController extends ResourceController {
 
     return Response.ok(
       BaseResult(
-        code: 1,
+        code: 0,
         msg: msg,
       ),
     );
