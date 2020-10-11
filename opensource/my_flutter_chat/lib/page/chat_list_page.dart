@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_chat/config/app_config.dart';
 import 'package:flutter_chat/page/chat_detail_page.dart';
 import 'package:flutter_chat/model/user_result.dart';
+import 'package:flutter_chat/page/login_page.dart';
 import 'package:flutter_chat/util/socket_manager.dart';
 import 'package:get_it/get_it.dart';
 import 'package:oktoast/oktoast.dart';
@@ -242,6 +243,14 @@ class _ChatListPageState extends State<ChatListPage> {
             ],
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.account_circle),
+        onPressed: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+            return LoginPage();
+          }));
+        },
       ),
     );
   }
